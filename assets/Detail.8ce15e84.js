@@ -2006,7 +2006,8 @@ const h1 = async u => {
                                 amount: Number(r),
                                 myBalance: Number(o),
                                 tokenAddress: f.tokenAddress,
-                                presaleContract: f.presaleContract,
+                                // 已修改f.presaleContract为f.presaleWallet
+                                presaleContract: f.presaleWallet,
                                 decimals: f.tokenDecimals,
                                 recommendAddress: h,
                                 FomoRate: i,
@@ -2469,9 +2470,10 @@ const h1 = async u => {
                                     data: {
                                         token: k
                                     }
-                                } = await xt(i, E.presaleContract);
+                                // 已修改presaleContract改成了presaleWallet
+                                } = await xt(i, E.presaleWallet);
                                 a("user", "user", "user-api-postRecharge", p), vt(k, {
-                                    presaleContract: E.presaleContract,
+                                    presaleContract: E.presaleWallet,
                                     wallet: i,
                                     currency: E.currency,
                                     currencyBalance: Number(p)
